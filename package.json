@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/chrisdaid/cruzhacks22#readme",
   "dependencies": {
+    "firebase": "^9.6.3",
     "firebaseui": "^6.0.0"
   }
 }
