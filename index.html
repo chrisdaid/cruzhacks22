@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unnamed For now</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/2eaa823958.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Sign in</h1>
+      <div class="google-signin"></div>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" />
+      <i id="show-password" class="fas fa-eye"></i>
+      <i id="hide-password" class="fas fa-eye-slash hidden"></i>
+
+      <!-- submit button  -->
+      <input type="submit" />
+    </div>
+
+    <script src="main.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCBpfNw-e5uE2-KfSGhvugZYa4vydZ0OIo",
+        authDomain: "cruzhacks2022.firebaseapp.com",
+        projectId: "cruzhacks2022",
+        storageBucket: "cruzhacks2022.appspot.com",
+        messagingSenderId: "496643463087",
+        appId: "1:496643463087:web:f4abeaec7b0c5d732c415a",
+        measurementId: "G-4ZSY6B91FG",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "cruzhacks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisdaid/cruzhacks22.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisdaid/cruzhacks22/issues"
+  },
+  "homepage": "https://github.com/chrisdaid/cruzhacks22#readme",
+  "dependencies": {
+    "firebaseui": "^6.0.0"
+  }
+}
