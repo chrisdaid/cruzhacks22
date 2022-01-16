@@ -5,6 +5,8 @@ import {
   set,
   ref,
   update,
+  get,
+  child,
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
 import {
   getAuth,
@@ -33,6 +35,7 @@ const auth = getAuth();
 
 const signUpBtn = document.querySelector("#signup-btn");
 const loginBtn = document.querySelector("#login-btn");
+const usernameText = document.querySelector("#username-db");
 
 const errorMessageText = document.querySelector(".error-text");
 
@@ -45,10 +48,13 @@ if (signUpBtn) {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
+        console.log("AUTO SIGNED IN");
         const user = userCredential.user;
+        const dt = new Date();
         set(ref(database, "users/" + user.uid), {
           username: username,
           email: email,
+          highscore: 0,
         });
 
         // set error message to account created and change red to black
@@ -67,6 +73,8 @@ if (signUpBtn) {
   });
 }
 
+let userId;
+
 if (loginBtn) {
   loginBtn.addEventListener("click", (e) => {
     var email = document.getElementById("email").value;
@@ -77,19 +85,19 @@ if (loginBtn) {
         // Signed in
         const user = userCredential.user;
         const dt = new Date();
+        userId = user.uid;
         update(ref(database, "users/" + user.uid), {
           last_login: dt,
         });
         // clear error message
         errorMessageText.innerText = "";
-        // alert("user has logged in" + user);
+        window.location.href = "/game.html";
         console.log(user.displayName);
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-
         errorMessageText.innerText = error.code;
       });
   });
@@ -104,11 +112,9 @@ onAuthStateChanged(auth, (user) => {
     let currentFile = currentURL.split("/");
     currentFile = currentFile[currentFile.length - 1];
     console.log(`${user.email} SIGNED IN`);
-    if (currentFile != "game.html") {
-      // now redirect to game page because authenticated
-      // EVERYTHING UNDER THIS IS NOW ALL ON GAME PAGE
-
-      window.location.href = "/game.html";
+    if (currentFile == "index.html") {
+      // now redirect to login page because account created
+      // window.location.href = "/login.html";
     }
     const uid = user.uid;
     // ...
@@ -133,3 +139,15 @@ if (signoutBtn) {
       });
   });
 }
+
+// if (usernameText) {
+const dbRef = ref(getDatabase());
+get(child(dbRef, `users/${userId}`)).then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+});
+console.log(userId);
+// }
