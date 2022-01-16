@@ -19,19 +19,22 @@
   </head>
   <body>
     <div class="login-container">
-      <h1>Welcome to some game</h1>
+      <h1 class="typewriter">Welcome to balloon</h1>
       <div class="google-signin"></div>
-      <label for="username">Email</label>
-      <input type="text" id="email" name="email" />
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" />
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" />
-      <i id="show-password" class="fas fa-eye"></i>
-      <i id="hide-password" class="fas fa-eye-slash hidden"></i>
+
+        <label for="username">Email</label>
+        <input type="text" id="email" name="email" />
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" />
+        <label for="password">Password</label>
+        <span class="password-showhide-container">
+          <input type="password" id="password" name="password" />
+          <i id="show-password" class="fas fa-eye"></i>
+          <i id="hide-password" class="fas fa-eye-slash hidden"></i>
+        </span>
 
         <!-- submit button  -->
-        <input type="submit" id="signup-btn" />
+        <input type="submit" id="signup-btn" value="Sign Up"/>
         <!-- error message  -->
         <p id="signup-error" class="error-text"></p>
         <a href="login.html" id="old-user-login">Already a user? Log in</a>
