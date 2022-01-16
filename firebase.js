@@ -123,7 +123,7 @@ if (signoutBtn) {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
-        alert("user signed out");
+        window.location.href = "/login.html";
       })
       .catch((error) => {
         // An error happened.
