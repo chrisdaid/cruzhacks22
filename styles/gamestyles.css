@@ -7,6 +7,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   height: 100vh;
+  max-width: 100vw;
   background: rgba(137, 204, 111, 0.214);
   background: linear-gradient(
     115deg,
@@ -14,6 +15,14 @@ body {
     rgb(161, 129, 189) 44%,
     rgba(215, 241, 67, 0.685) 100%
   );
+}
+
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .nav {
@@ -63,6 +72,8 @@ h2 {
   position: absolute;
   margin-top: 50px;
   width: 100%;
+  z-index: 1;
+  color: #fff;
 }
 
 h3#countdowntimer {
@@ -70,6 +81,9 @@ h3#countdowntimer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #fff;
+  font-size: 4rem;
 }
 
 p {

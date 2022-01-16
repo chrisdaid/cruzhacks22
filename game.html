@@ -20,14 +20,17 @@
   <body>
     <div class="nav">
       <h1>SquareTap</h1>
-      <p>High Score:</p>
-      <p>Points: <a id="clicks">0</a></p>
+      <p>High Score: <span id="high-score">0</span></p>
+      <p>Points: <span id="clicks">0</span></p>
 
       <button id="sign-out-btn"><b>Sign Out</b></button>
     </div>
 
+    <div class="overlay"></div>
+
     <h2 class="animate__animated info">
-      Click as many balloons as you can in 10 seconds!
+      Hey <span id="username-db"></span>, click as many balloons as you can in
+      10 seconds!
     </h2>
     <h3 id="countdowntimer">3</h3>
 
@@ -52,7 +55,7 @@
       const infoBeforeGameStart = document.querySelector(".info");
       setTimeout(() => {
         infoBeforeGameStart.classList.add("animate__flipOutX");
-      }, 3000);
+      }, 2600);
 
       var timeleft = 3;
       var downloadTimer = setInterval(function () {
@@ -61,6 +64,7 @@
         if (timeleft <= 0) {
           clearInterval(downloadTimer);
           document.getElementById("countdowntimer").style.display = "none";
+          document.querySelector(".overlay").style.display = "none";
         }
       }, 1000);
 
@@ -85,9 +89,6 @@
       }
     </script>
 
-    <!--<button type="button" onclick="clickcounter()">Click me</button> -->
-
     <script type="module" src="firebase.js"></script>
-    <!-- <script src="test.js"></script> -->
   </body>
 </html>
