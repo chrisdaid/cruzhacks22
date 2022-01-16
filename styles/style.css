@@ -2,6 +2,7 @@
   --bg: #fff;
   --primary: #9ac2c9;
   --secondary: #7180ac;
+  --black: #000;
   /* colors are temp */
 }
 
@@ -53,7 +54,7 @@ body {
 input[type="text"],
 input[type="password"] {
   margin-bottom: 0.25rem;
-  border: 2px solid #000;
+  border: 2px solid var(--black);
   border-radius: 0.125rem;
 }
 
@@ -61,7 +62,7 @@ input[type="submit"] {
   margin-top: 0.5rem;
   background-color: var(--secondary);
   border-radius: 0.125rem;
-  border: 2px solid #000;
+  border: 2px solid var(--black);
   cursor: pointer;
 }
 
@@ -69,6 +70,16 @@ input[type="submit"]:hover {
   background-color: var(--primary);
 }
 
+#new-user-signup,
+#old-user-login {
+  color: var(--black);
+  font-size: 0.85rem;
+}
+
 .login-container .hidden {
   display: none;
+}
+
+.error-text {
+  color: red;
 }
