@@ -109,6 +109,7 @@ input[type="submit"] {
   color: #fff;
   width: 30%;
   margin: 0 auto;
+  margin-top: 1rem;
   background-color: rgb(149, 143, 251);
   background: linear-gradient(
     115deg,
