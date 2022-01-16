@@ -1,18 +1,3 @@
-// import { initializeApp } from "firebase/app";
-
-// TODO: Replace the following with your app's//// Firebase project configuration in right place??
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCBpfNw-e5uE2-KfSGhvugZYa4vydZ0OIo",
-//   authDomain: "cruzhacks2022.firebaseapp.com",
-//   projectId: "cruzhacks2022",
-//   storageBucket: "cruzhacks2022.appspot.com",
-//   messagingSenderId: "496643463087",
-//   appId: "1:496643463087:web:f4abeaec7b0c5d732c415a",
-//   measurementId: "G-4ZSY6B91FG", //...
-// };
-
-// const app = initializeApp(firebaseConfig);
-
 // js for the application
 
 const password = document.getElementById("password");
@@ -41,10 +26,4 @@ showPass.addEventListener("click", () => {
 hidePass.addEventListener("click", () => {
   hidePass.classList.toggle("hidden");
   showPass.classList.toggle("hidden");
-});
-
-// prevent form from submitting
-const form = document.querySelector("form");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
 });

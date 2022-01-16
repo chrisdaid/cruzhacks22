@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - Sign Up</title>
+    <title>Home - Login</title>
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,25 +19,22 @@
   </head>
   <body>
     <div class="login-container">
-      <h1>Welcome to some game</h1>
+      <h1>Welcome Back!</h1>
       <div class="google-signin"></div>
       <label for="username">Email</label>
       <input type="text" id="email" name="email" />
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" />
       <label for="password">Password</label>
       <input type="password" id="password" name="password" />
       <i id="show-password" class="fas fa-eye"></i>
       <i id="hide-password" class="fas fa-eye-slash hidden"></i>
 
-        <!-- submit button  -->
-        <input type="submit" id="signup-btn" />
-        <!-- error message  -->
-        <p id="signup-error" class="error-text"></p>
-        <a href="login.html" id="old-user-login">Already a user? Log in</a>
-      </p>
-    </div>
+      <!-- submit button  -->
+      <input type="submit" id="login-btn" value="Log In" />
+      <!-- error message  -->
+      <p id="signup-error" class="error-text"></p>
 
+      <a href="index.html" id="new-user-signup">New? Sign up</a>
+    </div>
     <script type="module" src="firebase.js"></script>
     <script type="module" src="main.js"></script>
   </body>
