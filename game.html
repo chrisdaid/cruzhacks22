@@ -4,11 +4,89 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>SquareTap - Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/gamestyles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
-    <h1>Game</h1>
-    <button id="sign-out-btn">Sign Out</button>
+    <div class="nav">
+      <h1>SquareTap</h1>
+      <p>High Score:</p>
+      <p>Points: <a id="clicks">0</a></p>
+
+      <button id="sign-out-btn"><b>Sign Out</b></button>
+    </div>
+
+    <h2 class="animate__animated info">
+      Click as many balloons as you can in 10 seconds!
+    </h2>
+    <h3 id="countdowntimer">3</h3>
+
+    <div
+      id="rectangle"
+      style="
+        position: absolute;
+        height: 90px;
+        width: 75px;
+        /* border: 10px solid rgb(0, 13, 128); */
+        background: url('./assets/balloon.svg') no-repeat;
+        background-position: center;
+        background-size: contain;
+      "
+    ></div>
+
+    <script type="text/javascript">
+      let clicks = 0;
+      var rectangle = document.getElementById("rectangle");
+      var specWidth;
+      var specHeight;
+      const infoBeforeGameStart = document.querySelector(".info");
+      setTimeout(() => {
+        infoBeforeGameStart.classList.add("animate__flipOutX");
+      }, 3000);
+
+      var timeleft = 3;
+      var downloadTimer = setInterval(function () {
+        timeleft--;
+        document.getElementById("countdowntimer").textContent = timeleft;
+        if (timeleft <= 0) {
+          clearInterval(downloadTimer);
+          document.getElementById("countdowntimer").style.display = "none";
+        }
+      }, 1000);
+
+      RECTANGLE();
+
+      function RECTANGLE() {
+        specWidth =
+          document.body.offsetHeight - parseInt(rectangle.style.height);
+        specHeight =
+          document.body.offsetWidth - parseInt(rectangle.style.width);
+        rectangle.addEventListener("click", moveRectangle);
+        rectangle.addEventListener("click", clickcounter);
+      }
+      function moveRectangle() {
+        rectangle.style.top = Math.floor(Math.random() * specWidth) + "px";
+        rectangle.style.left = Math.floor(Math.random() * specHeight) + "px";
+      }
+
+      function clickcounter() {
+        clicks += 1;
+        document.getElementById("clicks").innerText = clicks;
+      }
+    </script>
+
+    <!--<button type="button" onclick="clickcounter()">Click me</button> -->
+
     <script type="module" src="firebase.js"></script>
     <!-- <script src="test.js"></script> -->
   </body>
