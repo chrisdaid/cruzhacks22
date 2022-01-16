@@ -28,13 +28,20 @@ body {
 }
 
 .typewriter {
-  width: 17.5ch;
   animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
-  font-size: 1.5em;
+  font-size: 1.75em;
   margin: 1em auto;
+}
+
+.typewriter-signup {
+  width: 17.5rem;
+}
+
+.typewriter-login {
+  width: 13.5ch;
 }
 
 @keyframes typing {
