@@ -33,6 +33,7 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
 
+const loginForm = document.getElementById("login-form");
 const signUpBtn = document.querySelector("#signup-btn");
 const loginBtn = document.querySelector("#login-btn");
 const usernameText = document.querySelector("#username-db");
@@ -40,7 +41,10 @@ const usernameText = document.querySelector("#username-db");
 const errorMessageText = document.querySelector(".error-text");
 
 if (signUpBtn) {
-  signUpBtn.addEventListener("click", (e) => {
+  // signUpBtn.addEventListener("click", (e) => {
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
     var email = document.getElementById("email").value;
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
@@ -76,7 +80,10 @@ if (signUpBtn) {
 let userId;
 
 if (loginBtn) {
-  loginBtn.addEventListener("click", (e) => {
+  // loginBtn.addEventListener("click", (e) => {
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
