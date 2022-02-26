@@ -23,6 +23,20 @@ body {
     rgba(17, 17, 152, 1) 44%,
     rgba(0, 212, 255, 1) 100%
   );
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
 }
 
 .typewriter {
@@ -35,7 +49,7 @@ body {
 }
 
 .typewriter-signup {
-  width: 20rem;
+  width: 20.5rem;
 }
 
 .typewriter-login {
@@ -77,7 +91,9 @@ body {
   border-radius: 50%;
   margin: 1rem auto;
   background: url("/assets/googlelogo.svg") #fff center no-repeat;
-  background-color: #c7c7c7;
+  background-color: var(--white);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+
   transition: transform 0.2s ease;
 }
 
@@ -122,16 +138,19 @@ input[type="submit"] {
     rgba(17, 17, 152, 1) 44%,
     rgba(0, 212, 255, 1) 100%
   );
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
 }
 
 input[type="submit"]:hover {
-  background-color: rgba(149, 143, 251);
   background: linear-gradient(
     115deg,
-    rgba(149, 143, 251, 0.8) 0%,
-    rgba(17, 17, 152, 0.8) 44%,
-    rgba(0, 212, 255, 0.8) 100%
+    rgba(149, 143, 251, 1) 0%,
+    rgba(17, 17, 152, 1) 35%,
+    rgba(0, 212, 255, 1) 80%
   );
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
 }
 
 #password {
@@ -144,6 +163,7 @@ input[type="submit"]:hover {
   margin: 0 auto;
   align-items: center;
   display: block;
+  user-select: none;
 }
 
 #new-user-signup,
