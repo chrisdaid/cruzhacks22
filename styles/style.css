@@ -159,4 +159,5 @@ input[type="submit"]:hover {
 
 .error-text {
   color: red;
+  margin: 0 auto;
 }
