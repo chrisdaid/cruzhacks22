@@ -18,24 +18,27 @@
     ></script>
   </head>
   <body>
-    <div class="login-container">
-      <h1 class="typewriter typewriter-login">Welcome Back!</h1>
-      <div class="google-signin"></div>
-      <label for="username">Email</label>
-      <input type="text" id="email" name="email" />
-      <label for="password">Password</label>
-      <span class="password-showhide-container">
-        <input type="password" id="password" name="password" />
-        <i id="show-password" class="fas fa-eye"></i>
-        <i id="hide-password" class="fas fa-eye-slash hidden"></i>
-      </span>
-      <!-- submit button  -->
-      <input type="submit" id="login-btn" value="Log In" />
-      <!-- error message  -->
-      <p id="signup-error" class="error-text"></p>
+    <form id="login-form">
+      <div class="login-container">
+        <h1 class="typewriter typewriter-login">Welcome Back!</h1>
+        <div class="google-signin"></div>
+        <label for="username">Email</label>
+        <input type="text" id="email" name="email" />
+        <label for="password">Password</label>
+        <span class="password-showhide-container">
+          <input type="password" id="password" name="password" />
+          <i id="show-password" class="fas fa-eye"></i>
+          <i id="hide-password" class="fas fa-eye-slash hidden"></i>
+        </span>
+        <!-- submit button  -->
+        <input type="submit" id="login-btn" value="Log In" />
+        <!-- error message  -->
+        <p id="signup-error" class="error-text"></p>
 
-      <a href="index.html" id="new-user-signup">New? Sign up</a>
-    </div>
+        <a href="index.html" id="new-user-signup">New? Sign up</a>
+      </div>
+    </form>
+
     <script type="module" src="firebase.js"></script>
     <script type="module" src="main.js"></script>
   </body>

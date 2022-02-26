@@ -18,10 +18,11 @@
     ></script>
   </head>
   <body>
-    <div class="login-container">
-      <h1 class="typewriter typewriter-signup">Welcome to BalloonTap</h1>
-      <div class="google-signin"></div>
-
+    <form id="login-form">
+      <div class="login-container">
+        <h1 class="typewriter typewriter-signup">Welcome to BalloonTap</h1>
+        <div class="google-signin"></div>
+        
         <label for="username">Email</label>
         <input type="text" id="email" name="email" />
         <label for="username">Username</label>
@@ -32,7 +33,7 @@
           <i id="show-password" class="fas fa-eye"></i>
           <i id="hide-password" class="fas fa-eye-slash hidden"></i>
         </span>
-
+        
         <!-- submit button  -->
         <input type="submit" id="signup-btn" value="Sign Up"/>
         <!-- error message  -->
@@ -40,6 +41,7 @@
         <a href="login.html" id="old-user-login">Already a user? Log in</a>
       </p>
     </div>
+  </form>
 
     <script type="module" src="firebase.js"></script>
     <script type="module" src="main.js"></script>
